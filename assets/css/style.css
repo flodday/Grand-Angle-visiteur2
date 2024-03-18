@@ -202,13 +202,14 @@ input[type="submit"]:hover {
 .artwork{
   grid-column: 4/10;
   text-align: center;
-  margin-bottom: 15px;
+  margin: 40px 0 15px 0;
 }
 
 .artwork img {
   height: 250px;
   width: 250px;
   border-radius: 10px;
+  margin-top: 15px;
 }
 .description{
   grid-column: 2/12;
@@ -252,7 +253,7 @@ input[type="submit"]:hover {
   background-color: #565759;
   padding: 20px;
   border-radius: 10px;
-  margin-bottom: 15px ;
+  margin: 10px 0 20px 0;
 }
 .audio-file {
   grid-column: 2/12;
@@ -778,3 +779,109 @@ margin-top: 125px;
 
 }
 
+/*FALC*/
+.bkgfalc{
+  background-color: #FFFAD9;
+  width: 100vw;
+  height: 100vh;
+}
+.falci{
+  font-size: 30px;
+  color: #000000;
+}
+
+/*codedudescritpionoeuvreclassique*/
+
+.handiFALC{
+
+}
+
+.hdFALC{
+  display: flex;
+  justify-content: center;
+  color: #000000;
+  font-size: x-large;
+  font-weight: 500;
+}
+.hdFALC i{
+  width: 100px;
+}
+.hdFALC h2{
+  display: flex;
+  justify-content: center;
+  color: #000000;
+  font-size: x-large;
+  margin-left: 40px;
+}
+.artworkFC{
+  grid-column: 4/10;
+  text-align: center;
+  margin: 40px 0 15px 0;
+  color: #000000;
+}
+
+.artworkFC img {
+  height: 400px;
+  width: 400px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.descriptionFC{
+  background-color: #FFFAD9;
+  grid-column: 2/12;
+  text-align: center;
+  border: 1px solid #ED5B8E;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 10px;
+  color: #000000;
+  font-size: x-large;
+  font-weight: 600;
+}
+
+.additional-infoFC {
+  background-color: #FFFAD9;
+    grid-column: 2/12;
+    grid-row: 4;
+    text-align: center;
+
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 15px ;
+    display: flex;
+    flex-direction: column;
+}
+  
+  .additional-infoFC ul {
+    list-style: none; 
+    padding: 0;
+  }
+  
+  .additional-infoFC ul li {
+    border-bottom: 1px solid #ED5B8E;
+    padding: 10px 0; 
+
+  }
+  
+  .title_additional_infoFC {
+    background-color: #FFFAD9;
+    margin-top: 0;
+  }
+  
+.exhibition-videoFC {
+  background-color: #FFFAD9;
+  grid-column: 2/12;
+  text-align: center;
+  border: 1px solid #ED5B8E;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 10px 0 20px 0;
+}
+.audio-fileFC {
+  background-color: #FFFAD9;
+  grid-column: 2/12;
+  grid-row: 6;
+  text-align: center;
+  margin-bottom: 15px;
+}
