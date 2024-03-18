@@ -1,8 +1,8 @@
 <?php
 
 require_once "config/pdo.php";
-$titre = "descriptionOeuvre";
-$nav = "descriptionOeuvre";
+$titre = "FALC";
+$nav = "FALC";
 include_once "includes/pages/nav.php";
 
 // Check if both id and lang parameters are present

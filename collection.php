@@ -65,11 +65,11 @@ if (isset($_GET['lang'])) {
 </div>
 
 <div class="filter">
-  <span>Nos collections : </span>
+  <span><?php echo COLFIL; ?></span>
     <select id="select-filter">
-      <option value="Photographie">Photographie</option>
-      <option value="Peinture">Peinture</option>
-      <option value="Sculpture">Sculpture</option>
+      <option value="Photographie"><?php echo PHT; ?></option>
+      <option value="Peinture"><?php echo PTRE; ?></option>
+      <option value="Sculpture"><?php echo SCTR; ?></option>
     </select>
 </div>
 
@@ -80,6 +80,7 @@ if (isset($_GET['lang'])) {
     if ($Collec['libelle_Type'] != $currentType) :
       $currentType = $Collec['libelle_Type'];
   ?>
+  
       <div class="rotate">
         <h2 id="<?= str_replace(' ', '-', strtolower($currentType)); ?>" class="colect-name"><?= $currentType; ?></h2>
       </div>
