@@ -1038,3 +1038,45 @@ $arts = $request1->fetchAll(PDO::FETCH_ASSOC);
 <?php
 include_once "includes/pages/footer.php";
 ?>
+
+
+/*COLLECTION*/ sans le id du h2*/
+<div class="filter">
+  <span>Nos collections : </span>
+    <select name="" id="select">
+      <option value="Photographie">Photographie</option>
+      <option value="Peinture">Peinture</option>
+      <option value="Sculpture">Sculpture</option>
+    </select>
+</div>
+
+<div class="expo-wrapper">
+<?php
+  $currentType = null;
+  foreach ($Collecs as $Collec) :
+    if ($Collec['libelle_Type'] != $currentType) :
+      $currentType = $Collec['libelle_Type'];
+  ?>
+      <div class="rotate">
+        <h2 class="colect-name"><?= $currentType; ?></h2>
+      </div>
+    <?php endif; ?>
+    <div class="card-keeper-expo">
+      <div class="card-expo" id="card-artiste">
+        <div class="card-row2">
+          <div class="image-artiste-ongoing" id="art-img">
+            <img src="assets/images/artwork/<?= $Collec['chemin_Image']; ?>" alt="image collection">
+          </div>
+        </div>
+        <div class="card-content-expo">
+          <h4 class="libelle-expo"><?= $Collec["libelle_contenu"]; ?></h4>
+          <div class="keep-expo-btn">
+            <button class="voir-plus-expo">
+              <a href="descriptionOeuvre.php?id=<?= $Collec["Id_oeuvre"]; ?>"><?php echo AFFICHE; ?></a>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  <?php endforeach; ?>
+</div>

@@ -39,5 +39,6 @@
 
 </footer>
 <script src="assets/javascript/script.js"></script>
+<script src="assets/javascript/script3.js"></script>
 </body>
 </html>

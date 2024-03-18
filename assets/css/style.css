@@ -425,7 +425,7 @@ padding: 70px 0;
 
 .expo-wrapper {
   grid-column: 2/11;
-  grid-row: auto;
+  grid-row: 3;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -486,6 +486,7 @@ padding: 70px 0;
   text-align: center;
   margin-bottom: 15px;
 }
+
 
 .voir-plus-expo{
   border:none;
@@ -699,6 +700,31 @@ margin-top: 125px;
 }
 
 /*collection.php*/
+.filter{
+  grid-row: 2;
+  padding: 13px;
+  height: 100%;
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+}
+.filter span {
+  font-size: 18px; 
+  font-weight: bold; 
+  margin: 0 10px 0 10px;
+  width: 120px;
+}
+.filter-condition select{
+  width: 120px;
+  padding: 0 0 0 10px;
+  border: none;
+  outline: none;
+  font-weight: bold;
+  color: #FEE440;
+  background: transparent;
+  cursor: pointer;
+
+}
 
 .colect-name{
   display: flex;

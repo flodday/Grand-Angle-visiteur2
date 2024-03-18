@@ -64,6 +64,15 @@ if (isset($_GET['lang'])) {
   </div>
 </div>
 
+<div class="filter">
+  <span>Nos collections : </span>
+    <select id="select-filter">
+      <option value="Photographie">Photographie</option>
+      <option value="Peinture">Peinture</option>
+      <option value="Sculpture">Sculpture</option>
+    </select>
+</div>
+
 <div class="expo-wrapper">
   <?php
   $currentType = null;
@@ -72,7 +81,7 @@ if (isset($_GET['lang'])) {
       $currentType = $Collec['libelle_Type'];
   ?>
       <div class="rotate">
-        <h2 class="colect-name"><?= $currentType; ?></h2>
+        <h2 id="<?= str_replace(' ', '-', strtolower($currentType)); ?>" class="colect-name"><?= $currentType; ?></h2>
       </div>
     <?php endif; ?>
     <div class="card-keeper-expo">
@@ -94,6 +103,7 @@ if (isset($_GET['lang'])) {
     </div>
   <?php endforeach; ?>
 </div>
+
 
 <?php
 include_once "includes/pages/footer.php";
