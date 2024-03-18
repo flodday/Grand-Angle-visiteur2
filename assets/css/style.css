@@ -824,9 +824,22 @@ margin-top: 125px;
   width: 100vw;
   height: 100%;
 }
+.bkgfalc h3{
+  color: #565759;
+}
 .falci{
+  background-color: #00000021;
+  align-items: center;
+  border-radius: 15px;
   font-size: 30px;
   color: #000000;
+  padding: 20px;
+}
+.addinf{
+  color: #000000;
+  font-size: x-large;
+  font-weight: bold;
+  letter-spacing: 2mm;
 }
 
 /*codedudescritpionoeuvreclassique*/
@@ -873,13 +886,16 @@ margin-top: 125px;
   background-color: #FFFCEC;
   grid-column: 2/12;
   text-align: center;
-  border: 1px solid #ED5B8E;
-  padding: 20px;
+  padding: 50px;
   border-radius: 10px;
   margin: 10px;
   color: #000000;
   font-size: x-large;
   font-weight: 600;
+}
+.descriptionFC p{
+  padding-top: 30px;
+  letter-spacing: 1.2mm;
 }
 
 .additional-infoFC {
@@ -896,7 +912,7 @@ margin-top: 125px;
   
   .additional-infoFC ul {
     list-style: none; 
-    padding: 0;
+    padding: 30px;
   }
   
   .additional-infoFC ul li {
@@ -926,4 +942,9 @@ margin-top: 125px;
   grid-row: 6;
   text-align: center;
   margin-bottom: 15px;
+  padding-bottom: 30px;
+}
+.audio-fileFC audio {
+  background-color: #000000;
+
 }

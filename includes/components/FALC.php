@@ -49,20 +49,21 @@ if (isset($_GET['id']) && isset($_GET['lang'])) {
 
 
 <div class="bkgfalc">
-    <div class="handiFALC">
 
-    <div class="hdFALC">
-    <i class="fa-solid fa-eye"></i>
-    <h2>FALC</h2>
-    </div>
-
+    
+    <div class="falci">
+        <div class="hdFALC">
+            <i class="fa-solid fa-eye"></i>
+            <h2>FALC</h2>
+        </div>
     </div>
 
     <div class="artworkFC">
+    <div class="falci">
         <i class="fa-solid fa-chart-bar falci"></i>
-        <div class="falci">
-            <h2>
-                </h3><?php echo DESC_H3; ?></h2>
+       
+
+            </h3><?php echo DESC_H3; ?></h3>
         </div>
         <?php foreach ($arts as $art) : ?>
             <img src="assets/images/artwork/<?= $art['chemin_Image']; ?>" alt="<?= $art['libelle_Oeuvre']; ?>">
@@ -71,9 +72,9 @@ if (isset($_GET['id']) && isset($_GET['lang'])) {
 
 
     <div class="descriptionFC">
-    <div class="falci">
-        <i class="fa-solid fa-palette falci"></i>
-        <div><?php echo DESC1_H3; ?></div>
+        <div class="falci">
+            <i class="fa-solid fa-palette falci"></i>
+            <div><?php echo DESC1_H3; ?></div>
         </div>
         <p>
             <?php
@@ -84,9 +85,12 @@ if (isset($_GET['id']) && isset($_GET['lang'])) {
     </div>
 
 
-    <div class="additional-infoFC falci">
-        <i class="fa-solid fa-file-circle-plus falci"></i>
-        <div class="falci"><?php echo ADDINFOS_H3; ?></div>
+    <div class="additional-infoFC">
+        <div class="falci">
+        <i class="fa-solid fa-file-circle-plus"></i>
+        <div><?php echo ADDINFOS_H3; ?></div>
+        </div>
+        <div class="addinf">
         <ul>
             <?php foreach ($arts as $art) { ?>
                 <li><strong><i class="fa-solid fa-image-portrait"></i><?php echo ARTISTE; ?> : </strong><?= $art['Prenom_Artiste'] . " "; ?><?= $art['Nom_Artiste']; ?></li>
@@ -96,19 +100,23 @@ if (isset($_GET['id']) && isset($_GET['lang'])) {
                 <li><strong><i class="fa-solid fa-calendar-days"></i><?php echo DATE; ?> : </strong><?= date('d-m-y', strtotime($art['Date_Debut'])) . " "; ?>-<?= " " . date('d-m-y', strtotime($art['Date_Fin'])); ?></li>
             <?php } ?>
         </ul>
+        </div>
     </div>
 
     <div class="exhibition-videoFC falci">
-        <i class="fa-regular fa-circle-play falci"></i>
+        <div class="falci">
+        <i class="fa-regular fa-circle-play "></i>
         <div><?php echo VIDEO_H3; ?></div>
-
+        </div>
         <iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
     </div>
 
-    <div class="audio-fileFC falci">
-        <i class="fa-solid fa-file-audio falci"></i>
+    <div class="audio-fileFC">
+        <div class="falci">
+        <i class="fa-solid fa-file-audio"></i>
         <div><?php echo AUDIO_H3; ?></div>
-        <audio controls>
+        </div>
+        <audio controls class="audio">
             <source src="audio.mp3" type="audio/mpeg">
         </audio>
     </div>
