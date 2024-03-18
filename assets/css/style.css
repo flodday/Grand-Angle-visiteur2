@@ -36,7 +36,7 @@ main{
 
   a {
     color: #acacac;
-    text-shadow: #FC0 1px 0 10px;
+    text-shadow: #FC0 1px 0 8px;
     text-decoration: none;
   }
   h3, i{
@@ -98,7 +98,6 @@ main{
   .nav-link {
     width: 100%;
     transition: 0.3s;
-    padding: 20px 0;
     width: 100px;
   }
   
@@ -320,8 +319,9 @@ margin-left: 200px;
   color: #FEE440;
   padding-left: 10px;
 }
-
-
+.social-links a{
+  padding: 10px 10px 0 0;
+}
 
 
 
