@@ -86,7 +86,7 @@ if (isset($_GET['id']) && isset($_GET['lang'])) {
 
     <div class="additional-infoFC falci">
         <i class="fa-solid fa-file-circle-plus falci"></i>
-        <div><?php echo ADDINFOS_H3; ?></div>
+        <div class="falci"><?php echo ADDINFOS_H3; ?></div>
         <ul>
             <?php foreach ($arts as $art) { ?>
                 <li><strong><i class="fa-solid fa-image-portrait"></i><?php echo ARTISTE; ?> : </strong><?= $art['Prenom_Artiste'] . " "; ?><?= $art['Nom_Artiste']; ?></li>
