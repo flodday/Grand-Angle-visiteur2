@@ -1,9 +1,10 @@
+</main>
 <footer class="footer">
  
 
 
 
-</main>
+
 <div class="footer-container">
     <div class="row">
         <div class="footer-col">

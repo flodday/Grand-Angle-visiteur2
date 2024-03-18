@@ -38,8 +38,6 @@ $oeuvresNow = $requeteArtNow->fetchAll(PDO::FETCH_ASSOC);
 
 
 
-
-
 <div class="bottom">
     <?php
 

@@ -82,7 +82,7 @@ $arts = $request1->fetchAll(PDO::FETCH_ASSOC);
 <li><strong><?php echo LIBELLEO; ?> : </strong><?= $art['libelle_contenu']; ?></li>
 <li><strong><?php echo PRIXO; ?> : </strong><?= $art['prix']; ?>€</li>
 <li><strong><?php echo DIMO; ?> : </strong><?= " " . $art['hauteur_Oeuvre'] . " "; ?><i class="fa-solid fa-xmark"></i><?= " " . $art['largeur_Oeuvre'] . " "; ?><i class="fa-solid fa-xmark"></i><?= " " . $art['profondeur_Oeuvre'] . " "; ?></li>
-<li><strong><?php echo DATE; ?> : </strong><?= date('d-m-y', strtotime($art['Date_Debut'])) . " "; ?>-<?= " " . date('d-m-y', strtotime($art['Date_Fin'])); ?></li>
+<li><strong><?php echo DATE; ?> : </strong><?= date('d-m-y', strtotime($art['Date_Debut'])) . " "; ?>-<?= " " . date('d-m-y', strtotime($art['Date_Fin'])); ?></li> 
 <?php } ?>
 
 </ul>
