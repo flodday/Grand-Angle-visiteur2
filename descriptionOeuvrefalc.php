@@ -53,7 +53,7 @@ if (isset($_GET['id']) && isset($_GET['lang'])) {
     <div class="handiFALC">
 
     <div class="hdFALC">
-    <i class="fa-solid fa-wheelchair"></i>
+    <i class="fa-solid fa-eye"></i>
     <h2>FALC</h2>
     </div>
 
@@ -73,7 +73,7 @@ if (isset($_GET['id']) && isset($_GET['lang'])) {
 
     <div class="descriptionFC">
     <div class="falci">
-        <i class="fa-solid fa-palette"></i>
+        <i class="fa-solid fa-palette falci"></i>
         <div><?php echo DESC1_H3; ?></div>
         </div>
         <p>
@@ -86,7 +86,7 @@ if (isset($_GET['id']) && isset($_GET['lang'])) {
 
 
     <div class="additional-infoFC falci">
-        <i class="fa-solid fa-file-circle-plus"></i>
+        <i class="fa-solid fa-file-circle-plus falci"></i>
         <div><?php echo ADDINFOS_H3; ?></div>
         <ul>
             <?php foreach ($arts as $art) { ?>
@@ -100,20 +100,21 @@ if (isset($_GET['id']) && isset($_GET['lang'])) {
     </div>
 
     <div class="exhibition-videoFC falci">
-        <i class="fa-regular fa-circle-play"></i>
+        <i class="fa-regular fa-circle-play falci"></i>
         <div><?php echo VIDEO_H3; ?></div>
 
         <iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
     </div>
 
     <div class="audio-fileFC falci">
-        <i class="fa-solid fa-file-audio"></i>
+        <i class="fa-solid fa-file-audio falci"></i>
         <div><?php echo AUDIO_H3; ?></div>
         <audio controls>
             <source src="audio.mp3" type="audio/mpeg">
         </audio>
     </div>
 </div>
+
 <?php
 include_once "includes/pages/footer.php";
 ?>
