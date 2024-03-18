@@ -53,7 +53,7 @@ $langues = $requestLangue->fetchAll(PDO::FETCH_ASSOC);
               <a href="listeExposition.php" class="nav-link"><?php echo EXPONAV; ?></a>
               <a href="listeArtiste.php" class="nav-link"><?php echo ARTISTENAV; ?></a>
               <a href="collection.php" class="nav-link"><?php echo COLLECNAV; ?></a>
-              <a href="#" class="nav-link"><?php echo CONTACTNAV; ?></a>
+              <a href="contact.php" class="nav-link"><?php echo CONTACTNAV; ?></a>
 
 
               <div class="menu_langues">
