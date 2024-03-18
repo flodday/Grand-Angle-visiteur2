@@ -27,10 +27,9 @@ if (isset($_GET['lang'])) {
           JOIN langue ON contenu.Id_Langue = langue.Id_Langue 
           JOIN type_oeuvre ON oeuvres.Id_Type = type_oeuvre.Id_Type
           WHERE langue.Id_Langue = $id_L";
-      $request = $db->query($sql);
-      $Collecs = $request->fetchAll(PDO::FETCH_ASSOC);
-  
-} elseif( !isset($_GET['lang'])) {
+  $request = $db->query($sql);
+  $Collecs = $request->fetchAll(PDO::FETCH_ASSOC);
+} elseif (!isset($_GET['lang'])) {
 
   $id_L = 1;
   $sql1 = "SELECT *
@@ -42,17 +41,16 @@ if (isset($_GET['lang'])) {
   JOIN langue ON contenu.Id_Langue = langue.Id_Langue
   JOIN type_oeuvre ON oeuvres.Id_Type = type_oeuvre.Id_Type
   WHERE langue.Id_Langue = $id_L";
-$request1 = $db->query($sql1);
-$Collecs = $request1->fetchAll(PDO::FETCH_ASSOC);
-
-} 
+  $request1 = $db->query($sql1);
+  $Collecs = $request1->fetchAll(PDO::FETCH_ASSOC);
+}
 
 ?>
 
 <div class="container-infos-expo">
   <div class="expo-infos">
     <div class="expo-header">
-      <h2 class=""><?php echo COLD;?></h2>
+      <h2 class=""><?php echo COLD; ?></h2>
       <p class="date-time"><?php include_once "date.php" ?></p>
     </div>
     <div class="expo-lineinfos">
@@ -67,7 +65,6 @@ $Collecs = $request1->fetchAll(PDO::FETCH_ASSOC);
 </div>
 
 <div class="expo-wrapper">
-
   <?php
   $currentType = null;
   foreach ($Collecs as $Collec) :
@@ -89,7 +86,7 @@ $Collecs = $request1->fetchAll(PDO::FETCH_ASSOC);
           <h4 class="libelle-expo"><?= $Collec["libelle_contenu"]; ?></h4>
           <div class="keep-expo-btn">
             <button class="voir-plus-expo">
-              <a href="descriptionOeuvre.php?id=<?= $Collec["Id_oeuvre"]; ?>"><?php echo AFFICHE;?></a>
+              <a href="descriptionOeuvre.php?id=<?= $Collec["Id_oeuvre"]; ?>"><?php echo AFFICHE; ?></a>
             </button>
           </div>
         </div>
@@ -97,7 +94,6 @@ $Collecs = $request1->fetchAll(PDO::FETCH_ASSOC);
     </div>
   <?php endforeach; ?>
 </div>
-
 
 <?php
 include_once "includes/pages/footer.php";
