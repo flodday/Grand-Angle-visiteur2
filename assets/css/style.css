@@ -74,13 +74,11 @@ main{
     width: 140px;
   }
   
-  .nav-branding-1,
-  .{
-    color: white;
+  .nav-branding-1,   .nav-branding-2{
     font-size: 2rem;
   }
   
-  . {
+  .nav-branding-1 {
     opacity: 0;
     display: none;
     padding: 15px 0;
@@ -501,6 +499,9 @@ margin-left: 200px;
   text-align: center;
   margin-bottom: 15px;
 }
+.date-expo {
+  color: #ED5B8E;
+}
 .keep-expo-btn a{
   color: #000000;
 }
@@ -744,7 +745,14 @@ margin-top: 125px;
   cursor: pointer;
 
 }
-
+.colect-name a {
+  width: 30px;
+  height: 30px;
+  padding: 2px;
+  border-radius: 50%;
+  margin-left: 15px;
+  background-color: #000000;
+}
 .colect-name{
   display: flex;
   width:80vw;

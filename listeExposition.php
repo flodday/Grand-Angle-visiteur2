@@ -59,7 +59,6 @@ $ExposF = $requeteExpoF->fetchAll(PDO::FETCH_ASSOC);
 
 
 <div class="expo-wrapper">
-
   <?php foreach ($Expos as $Expo) : ?>
     <div class="card-keeper-expo">
       <div class="card-expo">
@@ -70,7 +69,7 @@ $ExposF = $requeteExpoF->fetchAll(PDO::FETCH_ASSOC);
         </div>
         <div class="card-content-expo">
           <h4 class="libelle-expo"><?= $Expo["libelle_Exposition"]; ?></h4>
-          <h4 class="libelle-expo">Date de l'exposition : <?= date('d-m-y', strtotime($Expo['Date_Debut'])) . " "; ?>-<?= " " . date('d-m-y', strtotime($Expo['Date_Fin'])); ?></h4>
+          <h4 class="libelle-expo">Date de l'exposition : <span class="date-expo"><?= date('d-m-y', strtotime($Expo['Date_Debut'])) . " "; ?>-<?= " " . date('d-m-y', strtotime($Expo['Date_Fin'])); ?></span></h4>
 
           <div class="keep-expo-btn">
           <button class="voir-plus-expo">
@@ -80,8 +79,7 @@ $ExposF = $requeteExpoF->fetchAll(PDO::FETCH_ASSOC);
         </div>
       </div>
     </div>
-  <?php endforeach; ?>
-
+  <?php endforeach; ?>  
 </div>
 
 

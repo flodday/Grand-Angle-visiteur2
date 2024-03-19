@@ -65,12 +65,18 @@ if (isset($_GET['lang'])) {
 </div>
 
 <div class="filter">
+
   <span><?php echo COLFIL; ?></span>
-    <select id="select-filter">
-      <option value="Photographie"><?php echo PHT; ?></option>
-      <option value="Peinture"><?php echo PTRE; ?></option>
-      <option value="Sculpture"><?php echo SCTR; ?></option>
-    </select>
+  <select id="select-filter">
+    <?php 
+    $currentType = null;
+    foreach ($Collecs as $Collec) :
+    if ($Collec['libelle_Type'] != $currentType) :
+      $currentType = $Collec['libelle_Type']; ?>
+    <option value="<?php echo $Collec['libelle_Type']; ?>"><?php echo $Collec['libelle_Type']; ?></option>
+    <?php endif; ?>
+    <?php endforeach; ?>
+  </select>
 </div>
 
 <div class="expo-wrapper">
@@ -80,9 +86,9 @@ if (isset($_GET['lang'])) {
     if ($Collec['libelle_Type'] != $currentType) :
       $currentType = $Collec['libelle_Type'];
   ?>
-  
+
       <div class="rotate">
-        <h2 id="<?= str_replace(' ', '-', strtolower($currentType)); ?>" class="colect-name"><?= $currentType; ?></h2>
+        <h2 id="<?= str_replace(' ', '-', strtolower($currentType)); ?>" class="colect-name"><?= $currentType; ?> <a href=""><i class="fa-solid fa-arrow-up"></i></a></h2>
       </div>
     <?php endif; ?>
     <div class="card-keeper-expo">

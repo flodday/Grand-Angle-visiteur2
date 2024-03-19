@@ -69,7 +69,6 @@ $current_page = basename($_SERVER['REQUEST_URI']);
                   </ul>
                 </form>
               </div>
-
             </div>
           </div>
 
