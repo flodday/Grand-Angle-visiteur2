@@ -19,6 +19,7 @@ if (isset($_GET['id']) && isset($_GET['lang'])) {
     $row = $queryLangue->fetch(PDO::FETCH_ASSOC);
     $id_L = $row['Id_Langue'];
 
+    
     // Fetch object details based on ID
     $sql = "SELECT *
             FROM oeuvres

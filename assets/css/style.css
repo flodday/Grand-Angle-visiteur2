@@ -253,6 +253,9 @@ input[type="submit"]:hover {
     padding: 10px 0; 
     color: white; 
   }
+  .additional-info span {
+
+  }
   
   .title_additional_info {
     margin-top: 0;
@@ -942,6 +945,10 @@ margin-top: 125px;
     padding-right: 30px;
     font-size: x-large;
     color: #000000;
+  }
+  .additional-info span {
+    color: #ED5B8E;
+    font-weight: bold;
   }
   .title_additional_infoFC {
     background-color: #FFFCEC;
