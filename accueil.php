@@ -25,11 +25,9 @@ $oeuvresNow = $requeteArtNow->fetchAll(PDO::FETCH_ASSOC);
             <img src="./assets/images/gallery.jpg" width="100%" alt="gallerie" class="" id="im2">
             <img src="./assets/images/Tours.jpg" alt="ville de tours" class="" id="im3">
             <div class="nav-img">
-
                 <a href="#im1"></a>
                 <a href="#im2"></a>
                 <a href="#im3"></a>
-
             </div>
         </div>
     </div>

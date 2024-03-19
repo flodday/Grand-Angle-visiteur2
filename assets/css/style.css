@@ -75,12 +75,12 @@ main{
   }
   
   .nav-branding-1,
-  .nav-branding-2{
+  .{
     color: white;
     font-size: 2rem;
   }
   
-  .nav-branding-2 {
+  . {
     opacity: 0;
     display: none;
     padding: 15px 0;
@@ -94,12 +94,24 @@ main{
     align-items: center;
     gap: 40px;
   }
-  
+  .nav-menu a {
+    color: #FFF;
+    text-shadow: #FC0 1px 0 8px;
+
+  }
   .nav-link {
     width: 100%;
     transition: 0.3s;
     width: 100px;
   }
+  /*.active {
+    color: red;
+    font-weight: bold;
+  }
+  .nav-link.active {
+    background-color: #f0f0f0;
+    border-radius: 5px;
+  } */
   
   .nav-link:hover {
     color: #ffffff;
@@ -848,12 +860,10 @@ margin-top: 125px;
   display: flex;
   justify-content: center;
   color: #000000;
-  font-size: x-large;
   font-weight: 500;
   text-shadow: #FC0 1px 0 10px;
 }
 .hdFALC i{
-  font-size: 36px;
   line-height: 150px;
   width: 60px;
   height: 60px;

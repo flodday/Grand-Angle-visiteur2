@@ -50,7 +50,6 @@ if (isset($_GET['id']) && isset($_GET['lang'])) {
 
 <div class="bkgfalc">
 
-    
     <div class="falci">
         <div class="hdFALC">
             <i class="fa-solid fa-eye"></i>
@@ -70,7 +69,6 @@ if (isset($_GET['id']) && isset($_GET['lang'])) {
         <?php endforeach ?>
     </div>
 
-
     <div class="descriptionFC">
         <div class="falci">
             <i class="fa-solid fa-palette falci"></i>
@@ -83,7 +81,6 @@ if (isset($_GET['id']) && isset($_GET['lang'])) {
             } ?>
         </p>
     </div>
-
 
     <div class="additional-infoFC">
         <div class="falci">

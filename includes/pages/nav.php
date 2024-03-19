@@ -12,6 +12,9 @@ $langues = $requestLangue->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
+<?php
+$current_page = basename($_SERVER['REQUEST_URI']);
+?>
 
 
 
@@ -42,28 +45,26 @@ $langues = $requestLangue->fetchAll(PDO::FETCH_ASSOC);
   <header id="header">
     <div class="container">
       <div class="subcontainer">
-
         <nav class="navbar-container">
-
           <div class="navbar-left">
             <a href="accueil.php" class="nav-branding-1"><img src="assets/images/2 1.png" alt=""></a>
             <div class="nav-menu">
               <a href="accueil.php" class="nav-branding-2"><img src="assets/images/2 1.png" alt=""></a>
-
-              <a href="listeExposition.php" class="nav-link"><?php echo EXPONAV; ?></a>
-              <a href="listeArtiste.php" class="nav-link"><?php echo ARTISTENAV; ?></a>
-              <a href="collection.php" class="nav-link"><?php echo COLLECNAV; ?></a>
-              <a href="contact.php" class="nav-link"><?php echo CONTACTNAV; ?></a>
-
+              <a href="listeExposition.php" class="nav-link <?php if ($current_page === 'listeExposition.php') echo 'active'; ?>"><?php echo EXPONAV; ?></a>
+              <a href="listeArtiste.php" class="nav-link <?php if ($current_page === 'listeArtiste.php') echo 'active'; ?>"><?php echo ARTISTENAV; ?></a>
+              <a href="collection.php" class="nav-link <?php if ($current_page === 'collection.php') echo 'active'; ?>"><?php echo COLLECNAV; ?></a>
+              <a href="contact.php" class="nav-link <?php if ($current_page === 'contact.php') echo 'active'; ?>"><?php echo CONTACTNAV; ?></a>
 
               <div class="menu_langues">
                 <form action="" method="GET" id="form_lang">
                   <ul>
                     <?php foreach ($langues as $lan) : ?>
                       <li>
-                        <input style="display:none;" type="radio" name="lang" id="<?php echo $lan['value_Langue'] ?>" data-lang="<?php echo $lan['value_Langue'] ?>" onclick="changeLang();" value="<?php echo $lan['value_Langue'] ?>" <?php if (isset($_SESSION['lang']) && $_SESSION['lang'] ==  $lan['value_Langue']) { echo "checked";} ?>>
+                        <input style="display:none;" type="radio" name="lang" id="<?php echo $lan['value_Langue'] ?>" data-lang="<?php echo $lan['value_Langue'] ?>" onclick="changeLang();" value="<?php echo $lan['value_Langue'] ?>" <?php if (isset($_SESSION['lang']) && $_SESSION['lang'] ==  $lan['value_Langue']) {
+                                                                                                                                                                                                                                          echo "checked";
+                                                                                                                                                                                                                                        } ?>>
                       </li>
-                      <label for="<?php echo $lan['value_Langue'] ?>"><img class="flag" src="./assets/images/flag/<?php echo $lan['chemin_Flag'] ?>" alt="<?php echo $lan['libelle_Langue'] ?>"><?php echo $lan['libelle_Langue']?></label>
+                      <label for="<?php echo $lan['value_Langue'] ?>"><img class="flag" src="./assets/images/flag/<?php echo $lan['chemin_Flag'] ?>" alt="<?php echo $lan['libelle_Langue'] ?>"><?php echo $lan['libelle_Langue'] ?></label>
                     <?php endforeach ?>
                   </ul>
                 </form>
@@ -85,21 +86,21 @@ $langues = $requestLangue->fetchAll(PDO::FETCH_ASSOC);
     </div>
   </header>
   <main>
-    
-  <script>
-  function changeLang() {
-    let selectedLangue = document.querySelector('input[name="lang"]:checked').value;
-    let currentURL = window.location.href;
-    let [baseURL, queryString] = currentURL.split('?'); // Split URL into base URL and query parameters
-    let newURL = baseURL + "?lang=" + selectedLangue; // Initialize new URL with base URL and lang parameter
-    if (queryString) { // If there are existing query parameters
-      let queryParams = queryString.split('&'); // Split query parameters into an array
-      for (let param of queryParams) {
-        if (!param.startsWith('lang=')) { // Append existing parameters except lang
-          newURL += '&' + param;
+
+    <script>
+      function changeLang() {
+        let selectedLangue = document.querySelector('input[name="lang"]:checked').value;
+        let currentURL = window.location.href;
+        let [baseURL, queryString] = currentURL.split('?'); // Split URL into base URL and query parameters
+        let newURL = baseURL + "?lang=" + selectedLangue; // Initialize new URL with base URL and lang parameter
+        if (queryString) { // If there are existing query parameters
+          let queryParams = queryString.split('&'); // Split query parameters into an array
+          for (let param of queryParams) {
+            if (!param.startsWith('lang=')) { // Append existing parameters except lang
+              newURL += '&' + param;
+            }
+          }
         }
+        window.location.href = newURL; // Redirect to the new URL
       }
-    }
-    window.location.href = newURL; // Redirect to the new URL
-  }
-</script>
+    </script>
