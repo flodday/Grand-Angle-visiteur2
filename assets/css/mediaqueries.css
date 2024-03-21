@@ -267,6 +267,10 @@
   border-radius: 50%;
   margin-top: 100px;
 }
+/*ficheArtiste*/
+.wrapper{
+  grid-column: 1/13;
+}
 }
 
 @media screen and (max-width: 900px) {

@@ -102,13 +102,11 @@ main{
   .nav-menu {
     display: flex;
     justify-content: flex-start;
-    align-items: center;
     gap: 40px;
   }
   .nav-menu a {
     color: #FFF;
     text-shadow: #FC0 1px 0 8px;
-
   }
   .nav-link {
     width: 100%;
@@ -186,8 +184,6 @@ main{
 .hidden {
   display: none;
 }
-
-
 
 .formlanguage {
   font-family: Arial, sans-serif;
@@ -267,9 +263,7 @@ input[type="submit"]:hover {
     padding: 10px 0; 
     color: white; 
   }
-  .additional-info span {
 
-  }
   
   .title_additional_info {
     margin-top: 0;
@@ -649,7 +643,7 @@ color: #000000;
   display: block;
   grid-column: 3/11;
   grid-row: 3;
-  margin: 0 0 40px 40px;
+  margin: 0 0 40px 0px;
 
 }
 
@@ -773,13 +767,16 @@ display: none;
 .colect-name{
   display: flex;
   width:80vw;
-  height:80px;
+  height:80px;quotes: ;
   text-align: center;
   background-color:#FEE440;
   color: #252525;
   border-radius: 25px;
   align-items: center;
   justify-content: center;
+}
+.colec i{
+  color: #000000;
 }
 
 /*Accueil - top*/
@@ -997,5 +994,4 @@ display: none;
 }
 .audio-fileFC audio {
   background-color: #000000;
-
 }
