@@ -1080,3 +1080,7 @@ include_once "includes/pages/footer.php";
     </div>
   <?php endforeach; ?>
 </div>
+
+<button class="btn-afficher">
+              <a href="descriptionOeuvre.php?id=<?= $oeuvre["Id_oeuvre"]; ?>&lang=<?php echo $lang ?>"><?php echo AFFICHE; ?></a>
+            </button>

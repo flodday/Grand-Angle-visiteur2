@@ -19,7 +19,7 @@ if (isset($_GET['id']) && isset($_GET['lang'])) {
     $row = $queryLangue->fetch(PDO::FETCH_ASSOC);
     $id_L = $row['Id_Langue'];
 
-    
+
     // Fetch object details based on ID
     $sql = "SELECT *
             FROM oeuvres
@@ -101,9 +101,9 @@ if (isset($_GET['id']) && isset($_GET['lang'])) {
         </div>
     </div>
 
-    <div class="exhibition-videoFC falci">
+    <div class="exhibition-videoFC">
         <div class="falci">
-        <i class="fa-regular fa-circle-play "></i>
+        <i class="fa-regular fa-circle-play falci"></i>
         <div><?php echo VIDEO_H3; ?></div>
         </div>
         <iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
@@ -111,7 +111,7 @@ if (isset($_GET['id']) && isset($_GET['lang'])) {
 
     <div class="audio-fileFC">
         <div class="falci">
-        <i class="fa-solid fa-file-audio"></i>
+        <i class="fa-solid fa-file-audio falci"></i>
         <div><?php echo AUDIO_H3; ?></div>
         </div>
         <audio controls class="audio">
