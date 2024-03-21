@@ -294,9 +294,8 @@ input[type="submit"]:hover {
 }
 footer {
 padding: 70px 0;
-margin-left: 200px;
+margin-left: 40px;
 }
-
 .footer-container{
   grid-column: 3/9;
   margin: auto;
@@ -318,7 +317,6 @@ margin-left: 200px;
   text-transform: capitalize;
   margin-bottom: 30px;
   position: relative;
-
 }
 .footer-col h4::before {
   content: '';
@@ -362,10 +360,8 @@ margin-left: 200px;
   display: flex;
   flex-direction: column;
   padding: 25px 32px 25px 32px;
-  position: absolute;
   width: 100%;
   position: relative;
-
 }
 
 .expo-infos {
@@ -378,7 +374,6 @@ margin-left: 200px;
   flex-direction: column;
   /* height: 100%; */
   max-height: 100%;
-  margin-left: 180px;
 }
 .expo-header {
   display: flex;
@@ -388,7 +383,9 @@ margin-left: 200px;
   z-index: 1;
   position: sticky;
   top: 0;
-
+}
+.expo-header p{
+  padding-left: 10px
 }
 
 .expo-header h2 {
@@ -762,6 +759,9 @@ margin-top: 125px;
   cursor: pointer;
 
 }
+.colect-name a:first-child {
+display: none;
+}
 .colect-name a {
   width: 30px;
   height: 30px;
@@ -888,6 +888,8 @@ margin-top: 125px;
   font-weight: bold;
   letter-spacing: 2mm;
 }
+
+
 
 /*codedudescritpionoeuvreclassique*/
 
