@@ -67,7 +67,6 @@ main{
   
   .subcontainer {
     width: 85%;
-    margin: auto;
   }
   
   .navbar-container {
@@ -102,11 +101,13 @@ main{
   .nav-menu {
     display: flex;
     justify-content: flex-start;
+    align-items: center;
     gap: 40px;
   }
   .nav-menu a {
     color: #FFF;
     text-shadow: #FC0 1px 0 8px;
+
   }
   .nav-link {
     width: 100%;
@@ -158,7 +159,7 @@ main{
   }
   .menu_langues ul{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
   }
   .menu_langues ul li{
     list-style: none;
@@ -184,6 +185,8 @@ main{
 .hidden {
   display: none;
 }
+
+
 
 .formlanguage {
   font-family: Arial, sans-serif;
@@ -288,8 +291,9 @@ input[type="submit"]:hover {
 }
 footer {
 padding: 70px 0;
-margin-left: 40px;
+margin-left: 200px;
 }
+
 .footer-container{
   grid-column: 3/9;
   margin: auto;
@@ -311,6 +315,7 @@ margin-left: 40px;
   text-transform: capitalize;
   margin-bottom: 30px;
   position: relative;
+
 }
 .footer-col h4::before {
   content: '';
@@ -354,8 +359,10 @@ margin-left: 40px;
   display: flex;
   flex-direction: column;
   padding: 25px 32px 25px 32px;
+  position: absolute;
   width: 100%;
   position: relative;
+
 }
 
 .expo-infos {
@@ -368,6 +375,7 @@ margin-left: 40px;
   flex-direction: column;
   /* height: 100%; */
   max-height: 100%;
+  margin-left: 180px;
 }
 .expo-header {
   display: flex;
@@ -377,9 +385,7 @@ margin-left: 40px;
   z-index: 1;
   position: sticky;
   top: 0;
-}
-.expo-header p{
-  padding-left: 10px
+
 }
 
 .expo-header h2 {
@@ -643,8 +649,10 @@ color: #000000;
   display: block;
   grid-column: 3/11;
   grid-row: 3;
-  margin: 0 0 40px 0px;
 
+}
+.nav-liens {
+  display: none; 
 }
 
 .infos-sup{
@@ -717,7 +725,7 @@ margin-top: 125px;
 
 /*CAROUSSEL*/
 .top{
-  grid-column: 1/13;
+  grid-column: 1/12;
   grid-row: 1/3;
   overflow: hidden;
 }
@@ -753,9 +761,6 @@ margin-top: 125px;
   cursor: pointer;
 
 }
-.colect-name a:first-child {
-display: none;
-}
 .colect-name a {
   width: 30px;
   height: 30px;
@@ -767,16 +772,13 @@ display: none;
 .colect-name{
   display: flex;
   width:80vw;
-  height:80px;quotes: ;
+  height:80px;
   text-align: center;
   background-color:#FEE440;
   color: #252525;
   border-radius: 25px;
   align-items: center;
   justify-content: center;
-}
-.colec i{
-  color: #000000;
 }
 
 /*Accueil - top*/
@@ -851,6 +853,11 @@ display: none;
   grid-row: 2;
   padding: 20px;
 }
+.bottom{
+  grid-column: 2/11;
+  grid-row: 3;
+
+}
 .cardAccueil{
   grid-column: 2 / 12;
   text-align: center;
@@ -885,8 +892,6 @@ display: none;
   font-weight: bold;
   letter-spacing: 2mm;
 }
-
-
 
 /*codedudescritpionoeuvreclassique*/
 
@@ -994,4 +999,5 @@ display: none;
 }
 .audio-fileFC audio {
   background-color: #000000;
+
 }

@@ -1084,3 +1084,61 @@ include_once "includes/pages/footer.php";
 <button class="btn-afficher">
               <a href="descriptionOeuvre.php?id=<?= $oeuvre["Id_oeuvre"]; ?>&lang=<?php echo $lang ?>"><?php echo AFFICHE; ?></a>
             </button>
+
+
+  <header id="header">
+    <div class="container">
+      <div class="subcontainer">
+        <nav class="navbar-container">
+          <div class="navbar-left">
+            <a href="accueil.php" class="nav-branding-1"><img src="assets/images/2 1.png" alt=""></a>
+            <div class="nav-menu">
+              <a href="accueil.php" class="nav-branding-2"><img src="assets/images/2 1.png" alt=""></a>
+              <a href="listeExposition.php" class="nav-link <?php if ($current_page === 'listeExposition.php') echo 'active'; ?>"><?php echo EXPONAV; ?></a>
+              <a href="listeArtiste.php" class="nav-link <?php if ($current_page === 'listeArtiste.php') echo 'active'; ?>"><?php echo ARTISTENAV; ?></a>
+              <a href="collection.php" class="nav-link <?php if ($current_page === 'collection.php') echo 'active'; ?>"><?php echo COLLECNAV; ?></a>
+              <a href="contact.php" class="nav-link <?php if ($current_page === 'contact.php') echo 'active'; ?>"><?php echo CONTACTNAV; ?></a>
+              <ul>
+                <li class="nav-liens">
+                  <a href="listeExposition.php" class=""><?php echo EXPONAV; ?></a><br>
+                </li>
+                <li class="nav-liens">
+                  <a href="listeArtiste.php" class=""><?php echo ARTISTENAV; ?></a><br>
+                </li>
+                <li class="nav-liens">
+                  <a href="collection.php" class=""><?php echo COLLECNAV; ?></a><br>
+                </li>
+                <li class="nav-liens">
+                  <a href="contact.php" class=""><?php echo CONTACTNAV; ?></a><br>
+                </li>
+              </ul>
+              
+              <div class="menu_langues">
+                <form action="" method="GET" id="form_lang">
+                  <ul>
+                  <?php foreach ($langues as $lan) : ?>
+                      <li>
+                        <input style="display:none;" type="radio" name="lang" id="<?php echo $lan['value_Langue'] ?>" data-lang="<?php echo $lan['value_Langue'] ?>" onclick="changeLang();" value="<?php echo $lan['value_Langue'] ?>" <?php if (isset($_SESSION['lang']) && $_SESSION['lang'] ==  $lan['value_Langue']) {
+                                                                                                                                                                                                                                          echo "checked";
+                                                                                                                                                                                                                                        } ?>>
+                      </li>
+                      <label for="<?php echo $lan['value_Langue'] ?>"><img class="flag" src="./assets/images/flag/<?php echo $lan['chemin_Flag'] ?>" alt="<?php echo $lan['libelle_Langue'] ?>"><?php echo $lan['libelle_Langue'] ?></label>
+                    <?php endforeach ?>
+                  </ul>
+                </form>
+              </div>
+            </div>
+          </div>
+ 
+          <div class="navbar-right">
+            <div class="hamburger">
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+            </div>
+          </div>
+ 
+        </nav>
+      </div>
+    </div>
+  </header>
