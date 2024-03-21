@@ -1,3 +1,16 @@
+:root {
+  --BGCOLORPU: #252525;
+  --BGCOLORPR: #f3f3f3;
+  --PRIMARY: #310f8e;
+  --SECONDARY: #565759;
+  --ACCENT1: #fee440;
+  --ACCENT2: #ed5be8;
+  --FONTCOLOR: #e9e8e8;
+  --FONTCOLOR2: #252525;
+  --FONTTITLE: "Playfair", sans-serif;
+  --FONTTEXT: "Montserrat", sans-serif;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -147,7 +160,7 @@ main{
   }
   .menu_langues ul{
     display: flex;
-
+    flex-direction: column;
   }
   .menu_langues ul li{
     list-style: none;
@@ -161,6 +174,7 @@ main{
   height: 20px;
   border-radius: 5px;
 }
+  
   
 /**/
 
@@ -822,6 +836,16 @@ margin-top: 125px;
 .nav-img a:hover {
   opacity: 1;
 
+}
+
+.container_contact{
+  padding-top: 25px;
+  padding-left: 45px;
+}
+.google_map {
+  margin-left: 15px;
+  margin-top: 25px;
+  margin-bottom: 25px;
 }
 
 
