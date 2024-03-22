@@ -2,7 +2,7 @@
     <h2>Nous contacter</h2>
     <br>
     <h3>oû nous trouver?</h3>
-    <p> adresse: <br> 13 rue du Brade, 41000, Blois</p>
+    <p> adresse: <br> Jard. François 1er, 37000 Tours</p>
     <img src="./assets/images/completed-google-places-label.png" alt="" class="google_map">
     <div class="bg_contact_info">
     <p>numéro de telephone : <br> 06060606</p>

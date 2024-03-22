@@ -49,22 +49,26 @@ $current_page = basename($_SERVER['REQUEST_URI']);
           <div class="navbar-left">
             <a href="accueil.php" class="nav-branding-1"><img src="assets/images/2 1.png" alt=""></a>
             <div class="nav-menu">
-            <a href="accueil.php" class="nav-branding-2"><img src="assets/images/2 1.png" alt=""></a>
+              <a href="accueil.php" class="nav-branding-2"><img src="assets/images/2 1.png" alt=""></a>
+              <a href="listeExposition.php" class="nav-link <?php if ($current_page === 'listeExposition.php') echo 'active'; ?>"><?php echo EXPONAV; ?></a>
+              <a href="listeArtiste.php" class="nav-link <?php if ($current_page === 'listeArtiste.php') echo 'active'; ?>"><?php echo ARTISTENAV; ?></a>
+              <a href="collection.php" class="nav-link <?php if ($current_page === 'collection.php') echo 'active'; ?>"><?php echo COLLECNAV; ?></a>
+              <a href="contact.php" class="nav-link <?php if ($current_page === 'contact.php') echo 'active'; ?>"><?php echo CONTACTNAV; ?></a>
               <ul>
-                <li class="nav-liens nav-link">
+                <li class="nav-liens">
                   <a href="listeExposition.php" class=""><?php echo EXPONAV; ?></a><br>
                 </li>
-                <li class="nav-liens nav-link">
+                <li class="nav-liens">
                   <a href="listeArtiste.php" class=""><?php echo ARTISTENAV; ?></a><br>
                 </li>
-                <li class="nav-liens nav-link">
+                <li class="nav-liens">
                   <a href="collection.php" class=""><?php echo COLLECNAV; ?></a><br>
                 </li>
-                <li class="nav-liens nav-link">
+                <li class="nav-liens">
                   <a href="contact.php" class=""><?php echo CONTACTNAV; ?></a><br>
                 </li>
               </ul>
-
+              
               <div class="menu_langues">
                 <form action="" method="GET" id="form_lang">
                   <ul>

@@ -76,6 +76,16 @@
     margin-top: 25px;
     margin-bottom: 25px;
   }
+  .nav-liens {
+    display: block; 
+  }
+  .menu_langues ul{
+    display: flex;
+    flex-direction: column;
+  }
+  .nav-link{
+  display: none;
+  }
 }
 
 @media (max-width: 750px) {

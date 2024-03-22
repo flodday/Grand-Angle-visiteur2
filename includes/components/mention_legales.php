@@ -10,7 +10,7 @@
     <br>
     <p>SAS La Galerie Grand Angle - N° Tel : 0606060606</p>
     <br>
-    <p>8b, Allée du Plateau 41000 Blois
+    <p>Jard. François 1er, 37000 Tours
         Immatriculée au Registre du Commerce et des Sociétés sous le numéro 98765432100012</p>
     <br>
     <p>Numero TVA Intracommunautaire : FR????
