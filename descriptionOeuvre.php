@@ -48,7 +48,6 @@ if (isset($_GET['id']) && isset($_GET['lang'])) {
     WHERE oeuvres.Id_oeuvre = $id AND langue.Id_Langue = $id_L";
 $request1 = $db->query($sql1);
 $arts = $request1->fetchAll(PDO::FETCH_ASSOC);
-  
 } 
 
 ?>

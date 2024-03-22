@@ -28,8 +28,6 @@ if ( isset($_GET['lang'])) {
   <p><?php echo CARDACC; ?></p>
 </div>
 
-
-
 <h3><?php echo TLECAROU; ?></h3>
 
 <div class="wrapper">

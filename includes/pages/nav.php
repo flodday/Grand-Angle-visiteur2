@@ -42,7 +42,7 @@ $current_page = basename($_SERVER['REQUEST_URI']);
 
 
 <body>
-  <header id="header">
+<header id="header">
     <div class="container">
       <div class="subcontainer">
         <nav class="navbar-container">
@@ -72,7 +72,7 @@ $current_page = basename($_SERVER['REQUEST_URI']);
               <div class="menu_langues">
                 <form action="" method="GET" id="form_lang">
                   <ul>
-                    <?php foreach ($langues as $lan) : ?>
+                  <?php foreach ($langues as $lan) : ?>
                       <li>
                         <input style="display:none;" type="radio" name="lang" id="<?php echo $lan['value_Langue'] ?>" data-lang="<?php echo $lan['value_Langue'] ?>" onclick="changeLang();" value="<?php echo $lan['value_Langue'] ?>" <?php if (isset($_SESSION['lang']) && $_SESSION['lang'] ==  $lan['value_Langue']) {
                                                                                                                                                                                                                                           echo "checked";
@@ -85,7 +85,7 @@ $current_page = basename($_SERVER['REQUEST_URI']);
               </div>
             </div>
           </div>
-
+ 
           <div class="navbar-right">
             <div class="hamburger">
               <span class="bar"></span>
@@ -93,7 +93,7 @@ $current_page = basename($_SERVER['REQUEST_URI']);
               <span class="bar"></span>
             </div>
           </div>
-
+ 
         </nav>
       </div>
     </div>

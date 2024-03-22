@@ -44,7 +44,6 @@ if (isset($_GET['lang'])) {
   $request1 = $db->query($sql1);
   $Collecs = $request1->fetchAll(PDO::FETCH_ASSOC);
 }
-
 ?>
 
 <div class="container-infos-expo">
@@ -68,13 +67,13 @@ if (isset($_GET['lang'])) {
 
   <span><?php echo COLFIL; ?></span>
   <select id="select-filter">
-    <?php 
+    <?php
     $currentType = null;
     foreach ($Collecs as $Collec) :
-    if ($Collec['libelle_Type'] != $currentType) :
-      $currentType = $Collec['libelle_Type']; ?>
-    <option value="<?php echo $Collec['libelle_Type']; ?>"><?php echo $Collec['libelle_Type']; ?></option>
-    <?php endif; ?>
+      if ($Collec['libelle_Type'] != $currentType) :
+        $currentType = $Collec['libelle_Type']; ?>
+        <option value="<?php echo $Collec['libelle_Type']; ?>"><?php echo $Collec['libelle_Type']; ?></option>
+      <?php endif; ?>
     <?php endforeach; ?>
   </select>
 </div>
@@ -107,7 +106,7 @@ if (isset($_GET['lang'])) {
           </div>
         </div>
       </div>
-    </div>
+    </div >
   <?php endforeach; ?>
 </div>
 

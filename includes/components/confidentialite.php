@@ -16,7 +16,12 @@
     <p>
         Le but de cette politique de confidentialité est d'informer les utilisateurs de notre site des données personnelles que nous recueillerons ainsi que les informations suivantes, le cas échéant :
         <br><br>
-        Les données personnelles que nous recueillerons L’utilisation des données recueillies Qui a accès aux données recueillies Les droits des utilisateurs du site La politique de cookies du site Cette politique de confidentialité fonctionne parallèlement aux conditions générales d’utilisation de notre site.
+        Les données personnelles que nous recueillerons
+        L’utilisation des données recueillies
+        Qui a accès aux données recueillies
+        Les droits des utilisateurs du site
+        La politique de cookies du site
+        Cette politique de confidentialité fonctionne parallèlement aux conditions générales d’utilisation de notre site.
     </p>
     <br><br>
     <h2>
@@ -80,7 +85,7 @@
         Si vous avez des questions à nous poser, n’hésitez pas à communiquer avec nous en utilisant ce qui suit :
         06 06 06 06 06
         DUBRAC@GrandAngle.com
-        Jard. François 1er, 37000 Tours
+        13 rue du Brade, 41000, Blois
     </p>
     <br><br>
     <p>

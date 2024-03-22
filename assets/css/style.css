@@ -67,7 +67,6 @@ main{
   
   .subcontainer {
     width: 85%;
-    margin: auto;
   }
   
   .navbar-container {
@@ -267,9 +266,7 @@ input[type="submit"]:hover {
     padding: 10px 0; 
     color: white; 
   }
-  .additional-info span {
 
-  }
   
   .title_additional_info {
     margin-top: 0;
@@ -728,7 +725,7 @@ margin-top: 125px;
 
 /*CAROUSSEL*/
 .top{
-  grid-column: 1/13;
+  grid-column: 1/12;
   grid-row: 1/3;
   overflow: hidden;
 }
@@ -855,6 +852,11 @@ margin-top: 125px;
 .bottom {
   grid-row: 2;
   padding: 20px;
+}
+.bottom{
+  grid-column: 2/11;
+  grid-row: 3;
+
 }
 .cardAccueil{
   grid-column: 2 / 12;
