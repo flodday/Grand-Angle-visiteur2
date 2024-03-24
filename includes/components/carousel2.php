@@ -7,7 +7,7 @@ include_once "includes/pages/nav.php"; */
 
 $sqlArtNow = "SELECT *
 FROM oeuvres
-JOIN image ON oeuvres.Id_oeuvre = image.Id_oeuvre
+JOIN image ON oeuvres.Id_Oeuvres = image.Id_Oeuvres
 JOIN artiste ON artiste.Id_Artiste = oeuvres.Id_Artiste
 JOIN exposition ON oeuvres.Id_Exposition = exposition.Id_Exposition
 WHERE exposition.Date_Debut <= DATE_ADD(CURRENT_DATE(), INTERVAL 3 DAY) AND CURRENT_DATE() <= exposition.Date_Fin";
@@ -38,9 +38,9 @@ if ( isset($_GET['lang'])) {
           <div class="img"><img src="assets/images/artwork/<?= $oeuvre['chemin_Image']; ?>" alt="<?= $oeuvre['chemin_Image']; ?>"></div>
           <div class="btn-voir-plus">
             <button class="btn-afficher">
-              <a href="descriptionOeuvre.php?id=<?= $oeuvre["Id_oeuvre"]; ?>&lang=<?php echo $lang ?>"><?php echo AFFICHE; ?></a>
+              <a href="descriptionOeuvre.php?id=<?= $oeuvre["Id_Oeuvres"]; ?>&lang=<?php echo $lang ?>"><?php echo AFFICHE; ?></a>
             </button>
-            <button class="btn-afficher"><a href="descriptionOeuvrefalc.php?id=<?= $oeuvre["Id_oeuvre"]; ?>&lang=<?php echo $lang ?>"><?php echo FALC; ?></a></button>
+            <button class="btn-afficher"><a href="descriptionOeuvrefalc.php?id=<?= $oeuvre["Id_Oeuvres"]; ?>&lang=<?php echo $lang ?>"><?php echo FALC; ?></a></button>
           </div>
         </li>
       <?php endforeach; ?>

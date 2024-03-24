@@ -67,6 +67,7 @@ main{
   
   .subcontainer {
     width: 85%;
+    margin: auto;
   }
   
   .navbar-container {

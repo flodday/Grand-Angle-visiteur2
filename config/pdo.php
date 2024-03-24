@@ -2,7 +2,7 @@
 define ("DBHOST", "127.0.0.1"); 
 define ("DBUSER", "root");
 define ("DBPASS", "");
-define ("DBNAME", "grandangleprojetpt7");
+define ("DBNAME", "pt7bdd");
 
 $dsn = "mysql:dbname=".DBNAME.";host=".DBHOST;
 // $dsn = "mysql:dbname=".DBNAME."mysql:host=".DBHOST;
@@ -17,5 +17,4 @@ try {
 }
 catch(PDOException $e)
     {die("Erreur de connexion à la BDD".$e->getMessage());} 
-    
 ;?>

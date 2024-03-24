@@ -11,10 +11,10 @@ if (isset($_GET['id'])) {
   $id = $_GET['id'];
   $sql = "SELECT *
   FROM oeuvres
-  JOIN image ON oeuvres.Id_oeuvre = image.Id_oeuvre
+  JOIN image ON oeuvres.Id_Oeuvres = image.Id_Oeuvres
   JOIN artiste ON artiste.Id_Artiste = oeuvres.Id_Artiste
   JOIN exposition ON oeuvres.Id_Exposition = exposition.Id_Exposition
-  WHERE  oeuvres.Id_oeuvre = $id";
+  WHERE  oeuvres.Id_Oeuvres = $id";
   $request = $db->query($sql);
   $arts = $request->fetchAll(PDO::FETCH_ASSOC);
 }
@@ -45,8 +45,8 @@ $id_L = $row['Id_Langue'];
 $sqlDescription = "SELECT *
   FROM contenu
   JOIN langue ON contenu.Id_Langue = langue.Id_Langue
-  JOIN oeuvres ON contenu.Id_oeuvre = oeuvres.Id_oeuvre
-  WHERE  langue.Id_Langue = $id_L And oeuvres.Id_oeuvre = $id";
+  JOIN oeuvres ON contenu.Id_Oeuvres = oeuvres.Id_Oeuvres
+  WHERE  langue.Id_Langue = $id_L And oeuvres.Id_Oeuvres = $id";
 $request1 = $db->query($sqlDescription);
 $descriptions = $request1->fetchAll(PDO::FETCH_ASSOC);
 
@@ -306,7 +306,7 @@ if (isset($_GET['id'])) :
     $currentDateTime = date("Y-m-d H:i:s"); // Current date and time
     $sql2 = "SELECT *
     FROM oeuvres
-    JOIN image ON oeuvres.Id_oeuvre = image.Id_oeuvre
+    JOIN image ON oeuvres.Id_Oeuvres = image.Id_Oeuvres
     JOIN artiste ON artiste.Id_Artiste = oeuvres.Id_Artiste
     JOIN exposition ON oeuvres.Id_Exposition = exposition.Id_Exposition
     WHERE  oeuvres.Id_Exposition = $id2 AND (exposition.Date_Fin <= '$currentDateTime' OR 'exposition.Date_Debut' >= '$currentDateTime')";
@@ -322,7 +322,7 @@ if (isset($_GET['id'])) :
                         <div class="img"><img src="assets/images/artwork/<?= $cardOeuvre['chemin_Image']; ?>" alt="<?= $cardOeuvre['chemin_Image']; ?>"></div>
                         <div class="btn-voir-plus">
                             <button class="btn-afficher">
-                                <a href="descriptionOeuvre.php?id=<?= $cardOeuvre["Id_oeuvre"]; ?>">Afficher plus</a>
+                                <a href="descriptionOeuvre.php?id=<?= $cardOeuvre["Id_Oeuvres"]; ?>">Afficher plus</a>
                             </button>
                         </div>
                     </li>
@@ -338,7 +338,7 @@ if (isset($_GET['id'])) :
     $currentDateTime = date("Y-m-d H:i:s"); // Date et heure actuelles
     $sql3 = "SELECT *
     FROM oeuvres
-    JOIN image ON oeuvres.Id_oeuvre = image.Id_oeuvre
+    JOIN image ON oeuvres.Id_Oeuvres = image.Id_Oeuvres
     JOIN artiste ON artiste.Id_Artiste = oeuvres.Id_Artiste
     JOIN exposition ON oeuvres.Id_Exposition = exposition.Id_Exposition
     WHERE  oeuvres.Id_Exposition = $id3 AND exposition.Date_Debut < '$currentDateTime'";
@@ -372,7 +372,7 @@ include_once "includes/pages/nav.php";
 $sqlCollec = "SELECT *
 FROM oeuvres
 JOIN type_oeuvre ON oeuvres.Id_Type = type_oeuvre.Id_Type
-JOIN image ON image.Id_oeuvre = oeuvres.Id_oeuvre 
+JOIN image ON image.Id_Oeuvres = oeuvres.Id_Oeuvres 
 GROUP BY type_oeuvre.Id_Type";
 $requeteCollec = $db->query($sqlCollec);
 $Collecs = $requeteCollec->fetchAll(PDO::FETCH_ASSOC);
@@ -426,7 +426,7 @@ $Collecs1 = $requeteCollec1->fetchAll(PDO::FETCH_ASSOC);
 
           <div class="keep-expo-btn">
           <button class="voir-plus-expo">
-            <a href="descriptionOeuvre.php?id=<?= $Collec["Id_oeuvre"];?>">Voir plus</a>
+            <a href="descriptionOeuvre.php?id=<?= $Collec["Id_Oeuvres"];?>">Voir plus</a>
           </button>
           </div>
         </div>
@@ -460,10 +460,10 @@ if (isset($_GET['id'])) {
   $id = $_GET['id'];
   $sql = "SELECT *
   FROM oeuvres
-  JOIN image ON oeuvres.Id_oeuvre = image.Id_oeuvre
+  JOIN image ON oeuvres.Id_Oeuvres = image.Id_Oeuvres
   JOIN artiste ON artiste.Id_Artiste = oeuvres.Id_Artiste
   JOIN exposition ON oeuvres.Id_Exposition = exposition.Id_Exposition
-  WHERE  oeuvres.Id_oeuvre = $id";
+  WHERE  oeuvres.Id_Oeuvres = $id";
   $request = $db->query($sql);
   $arts = $request->fetchAll(PDO::FETCH_ASSOC);
 }
@@ -489,8 +489,8 @@ $id_L = $row['Id_Langue'];
 /* $sqlDescription = "SELECT *
   FROM contenu
   JOIN langue ON contenu.Id_Langue = langue.Id_Langue
-  JOIN oeuvres ON contenu.Id_oeuvre = oeuvres.Id_oeuvre
-  WHERE  langue.Id_Langue = $id_L AND oeuvres.Id_oeuvre = $id";
+  JOIN oeuvres ON contenu.Id_Oeuvres = oeuvres.Id_Oeuvres
+  WHERE  langue.Id_Langue = $id_L AND oeuvres.Id_Oeuvres = $id";
 $request1 = $db->query($sqlDescription);
 $descriptions = $request1->fetchAll(PDO::FETCH_ASSOC);
  */
@@ -503,8 +503,8 @@ $descriptions = $request1->fetchAll(PDO::FETCH_ASSOC);
   $sqlDescription = "SELECT *
       FROM contenu
       JOIN langue ON contenu.Id_Langue = langue.Id_Langue
-      JOIN oeuvres ON contenu.Id_oeuvre = oeuvres.Id_oeuvre
-      WHERE langue.value_Langue = :value_Langue AND oeuvres.Id_oeuvre = :id";
+      JOIN oeuvres ON contenu.Id_Oeuvres = oeuvres.Id_Oeuvres
+      WHERE langue.value_Langue = :value_Langue AND oeuvres.Id_Oeuvres = :id";
  
   // Prepare the statement
   $stmt = $db->prepare($sqlDescription);
@@ -629,10 +629,10 @@ if (isset($_GET['id'])) {
     echo $id;
     $sql = "SELECT *
             FROM oeuvres
-            JOIN image ON oeuvres.Id_oeuvre = image.Id_oeuvre
+            JOIN image ON oeuvres.Id_Oeuvres = image.Id_Oeuvres
             JOIN artiste ON artiste.Id_Artiste = oeuvres.Id_Artiste
             JOIN exposition ON oeuvres.Id_Exposition = exposition.Id_Exposition
-            WHERE oeuvres.Id_oeuvre = :id"; // Use a parameterized query
+            WHERE oeuvres.Id_Oeuvres = :id"; // Use a parameterized query
     $stmt = $db->prepare($sql);
     $stmt->bindParam(':id', $id, PDO::PARAM_INT);
     $stmt->execute();
@@ -646,8 +646,8 @@ var_dump($arts);
     $sqlDescription = "SELECT *
                         FROM contenu
                         JOIN langue ON contenu.Id_Langue = langue.Id_Langue
-                        JOIN oeuvres ON contenu.Id_oeuvre = oeuvres.Id_oeuvre
-                        WHERE langue.value_Langue = :value_Langue AND oeuvres.Id_oeuvre = :id";
+                        JOIN oeuvres ON contenu.Id_Oeuvres = oeuvres.Id_Oeuvres
+                        WHERE langue.value_Langue = :value_Langue AND oeuvres.Id_Oeuvres = :id";
  
     $stmt1 = $db->prepare($sqlDescription);
  
@@ -735,10 +735,10 @@ if (isset($_GET['id']) && isset($_GET['lang'])) {
     // Fetch object details based on ID
     $sql = "SELECT *
             FROM oeuvres
-            JOIN image ON oeuvres.Id_oeuvre = image.Id_oeuvre
+            JOIN image ON oeuvres.Id_Oeuvres = image.Id_Oeuvres
             JOIN artiste ON artiste.Id_Artiste = oeuvres.Id_Artiste
             JOIN exposition ON oeuvres.Id_Exposition = exposition.Id_Exposition
-            WHERE oeuvres.Id_oeuvre = $id";
+            WHERE oeuvres.Id_Oeuvres = $id";
     $request = $db->query($sql);
 /*     $stmt->bindParam(':id', $id, PDO::PARAM_INT);
     $stmt->execute(); */
@@ -749,8 +749,8 @@ if (isset($_GET['id']) && isset($_GET['lang'])) {
     $sqlDescription = "SELECT *
                        FROM contenu
                        JOIN langue ON contenu.Id_Langue = langue.Id_Langue
-                       JOIN oeuvres ON contenu.Id_oeuvre = oeuvres.Id_oeuvre
-                       WHERE langue.libelle_Langue = :lang AND oeuvres.Id_oeuvre = :id";
+                       JOIN oeuvres ON contenu.Id_Oeuvres = oeuvres.Id_Oeuvres
+                       WHERE langue.libelle_Langue = :lang AND oeuvres.Id_Oeuvres = :id";
     $stmt1 = $db->prepare($sqlDescription);
     $stmt1->bindParam(':lang', $lang, PDO::PARAM_STR);
     $stmt1->bindParam(':id', $id, PDO::PARAM_INT);
@@ -764,7 +764,7 @@ if (isset($_GET['id']) && isset($_GET['lang'])) {
     $sqlDescription = "SELECT *
                        FROM contenu
                        JOIN langue ON contenu.Id_Langue = langue.Id_Langue
-                       JOIN oeuvres ON contenu.Id_oeuvre = oeuvres.Id_oeuvre
+                       JOIN oeuvres ON contenu.Id_Oeuvres = oeuvres.Id_Oeuvres
                        WHERE langue.libelle_Langue = :lang";
     $stmt = $db->prepare($sqlDescription);
     $stmt->bindParam(':lang', $lang, PDO::PARAM_STR);
@@ -849,7 +849,7 @@ include_once "includes/pages/nav.php";
 $sqlCollec = "SELECT *
               FROM oeuvres
               JOIN type_oeuvre ON oeuvres.Id_Type = type_oeuvre.Id_Type
-              JOIN image ON image.Id_oeuvre = oeuvres.Id_oeuvre";
+              JOIN image ON image.Id_Oeuvres = oeuvres.Id_Oeuvres";
 $requeteCollec = $db->query($sqlCollec);
 $Collecs = $requeteCollec->fetchAll(PDO::FETCH_ASSOC);
 
@@ -958,12 +958,12 @@ if (isset($_GET['id']) && isset($_GET['lang'])) {
     // Fetch object details based on ID
     $sql = "SELECT *
             FROM oeuvres
-            JOIN image ON oeuvres.Id_oeuvre = image.Id_oeuvre
+            JOIN image ON oeuvres.Id_Oeuvres = image.Id_Oeuvres
             JOIN artiste ON artiste.Id_Artiste = oeuvres.Id_Artiste
             JOIN exposition ON oeuvres.Id_Exposition = exposition.Id_Exposition
-            JOIN contenu ON contenu.Id_oeuvre = oeuvres.Id_oeuvre
+            JOIN contenu ON contenu.Id_Oeuvres = oeuvres.Id_Oeuvres
             JOIN langue ON contenu.Id_Langue = langue.Id_Langue
-            WHERE oeuvres.Id_oeuvre = $id AND langue.Id_Langue = $id_L";
+            WHERE oeuvres.Id_Oeuvres = $id AND langue.Id_Langue = $id_L";
         $request = $db->query($sql);
         $arts = $request->fetchAll(PDO::FETCH_ASSOC);
     
@@ -972,12 +972,12 @@ if (isset($_GET['id']) && isset($_GET['lang'])) {
     $id_L = 1;
     $sql1 = "SELECT *
     FROM oeuvres
-    JOIN image ON oeuvres.Id_oeuvre = image.Id_oeuvre
+    JOIN image ON oeuvres.Id_Oeuvres = image.Id_Oeuvres
     JOIN artiste ON artiste.Id_Artiste = oeuvres.Id_Artiste
     JOIN exposition ON oeuvres.Id_Exposition = exposition.Id_Exposition
-    JOIN contenu ON contenu.Id_oeuvre = oeuvres.Id_oeuvre
+    JOIN contenu ON contenu.Id_Oeuvres = oeuvres.Id_Oeuvres
     JOIN langue ON contenu.Id_Langue = langue.Id_Langue
-    WHERE oeuvres.Id_oeuvre = $id AND langue.Id_Langue = $id_L";
+    WHERE oeuvres.Id_Oeuvres = $id AND langue.Id_Langue = $id_L";
 $request1 = $db->query($sql1);
 $arts = $request1->fetchAll(PDO::FETCH_ASSOC);
   
@@ -1072,7 +1072,7 @@ include_once "includes/pages/footer.php";
           <h4 class="libelle-expo"><?= $Collec["libelle_contenu"]; ?></h4>
           <div class="keep-expo-btn">
             <button class="voir-plus-expo">
-              <a href="descriptionOeuvre.php?id=<?= $Collec["Id_oeuvre"]; ?>"><?php echo AFFICHE; ?></a>
+              <a href="descriptionOeuvre.php?id=<?= $Collec["Id_Oeuvres"]; ?>"><?php echo AFFICHE; ?></a>
             </button>
           </div>
         </div>
@@ -1082,7 +1082,7 @@ include_once "includes/pages/footer.php";
 </div>
 
 <button class="btn-afficher">
-              <a href="descriptionOeuvre.php?id=<?= $oeuvre["Id_oeuvre"]; ?>&lang=<?php echo $lang ?>"><?php echo AFFICHE; ?></a>
+              <a href="descriptionOeuvre.php?id=<?= $oeuvre["Id_Oeuvres"]; ?>&lang=<?php echo $lang ?>"><?php echo AFFICHE; ?></a>
             </button>
 
 
@@ -1142,3 +1142,141 @@ include_once "includes/pages/footer.php";
       </div>
     </div>
   </header>
+
+
+  /*test pour partie admin card expo input */
+
+  <?php
+require_once "./config/pdo.php";
+$sql = "SELECT *
+FROM exposition
+ORDER BY exposition.Id_Exposition ASC";
+$requete = $db -> query($sql);
+$expos = $requete->fetchAll(PDO::FETCH_ASSOC);
+;?>
+ 
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/styleM.css">
+    <title>Document</title>
+</head>
+<body>
+   
+</body>
+</html>
+<div class="page-artist">
+    <h2 class="title-page-artist">Liste des Expositions : </h2>
+ 
+    <div class="search-container form-divs-list-artist">
+        <form action="" method="GET">
+            <label for="filter-expo">Filtrer par nom de l'exposition :</label>
+      <input type="text" class="search-bar" id="filter-expo" name="filter-expo" placeholder="Entrer le nom de l'exposition">
+      <button type="submit" class="search-btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg></button>
+    </form>
+  </div>
+ 
+<div class="art-content-now">
+    <div class="expo-content-now">
+        <div class="container-cards-art-now">
+            <?php forEach($expos as $expo) :?>
+                <div class="card-art-now-expo" id="<?= $expo['Id_Exposition'] ?>">
+ 
+                    <div class="delete-panel" id="delete-project-overlay-<?= $expo['Id_Exposition'] ?>">
+                        <div class="container-delete">
+                            <div class="info-delete">
+                                <p>Voulez-vous vraiment supprimer l'artiste ?</p>
+                                <div>
+                                    <button id="confirm-delete-next" data-expo-id="<?= $expo['Id_Exposition'] ?>">Oui, supprimer</button>
+                                    <button id="cancel-delete-next">Non, pas maintenant</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+ 
+                    <div class="card-row1">
+                        <h2><?= $expo['libelle_Exposition'] ?></h2>
+                    </div>
+                    <div class="card-row2">
+                        <div class="image-oeuvre-ongoing">
+                            <a href=""><img src="./assets/img/exposition/<?php echo $expo['chemin_Affiche'];?>" alt=""></a>
+                        </div>
+                        <div class="content-infos-oeuvre-ongoing">
+                            <div class="infos-oeuvre-ongoing artist-info-content">
+                                <span class='info-atists'>Date de l'exposition :</span> <br>
+                                <p class="expo-p"> <?= date('d-m-y', strtotime($expo['Date_Debut'])) . " "; ?>-<?= " " . date('d-m-y', strtotime($expo['Date_Fin'])); ?>
+                           
+                            </div>
+                            <div class="action-oeuvre-ongoing">
+                                <div class="modify-art-ongoing">
+                                    <a href="expo-update.php?id=<?= $expo['Id_Exposition'] ?>">
+                                        <svg viewBox="0 0 512 512"><path d="M362.7 19.3L314.3 67.7 444.3 197.7l48.4-48.4c25-25 25-65.5 0-90.5L453.3 19.3c-25-25-65.5-25-90.5 0zm-71 71L58.6 323.5c-10.4 10.4-18 23.3-22.2 37.4L1 481.2C-1.5 489.7 .8 498.8 7 505s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L421.7 220.3 291.7 90.3z"/></svg>
+                                    </a>
+                                </div>
+                                <div class="delete-art-ongoing">
+                                <a href="#" class="delete-oeuvreNext-link link" data-id="<?= $expo['Id_Exposition'] ?>">
+                                        <svg viewBox="0 0 448 512"><path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+                <?php endforeach ;?>
+               
+        </div>
+    </div>
+    <div class="container-button-art-ongoing">
+        <button type="button" id="add-oeuvre-expo-now">
+           <a href="./add-oeuvre-unique.php">Ajouter une exposition</a><svg viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg></button>
+    </div>
+</div>
+ 
+<script>
+    const nextDeleteLinks = document.querySelectorAll(".delete-oeuvreNext-link");
+        nextDeleteLinks.forEach(function(nextDeleteLink){
+            const oeuvreCard = nextDeleteLink.closest('.card-art-now-expo');
+            const modal = oeuvreCard.querySelector('.delete-panel');
+            const nextConfirmBtn = modal.querySelector("#confirm-delete-next");
+            const nextCancelBtn = modal.querySelector("#cancel-delete-next");
+ 
+            nextDeleteLink.addEventListener('click', function(event) {
+                event.preventDefault();
+                modal.style.display = 'block';
+            })
+ 
+            nextCancelBtn.addEventListener('click', function(event) {
+                event.preventDefault();
+                modal.style.display = 'none';
+            })
+ 
+            nextConfirmBtn.addEventListener('click', function(event) {
+                event.preventDefault();
+                const artisteId = this.getAttribute('data-artist-id');
+                console.log(artisteId);
+                const xhr = new XMLHttpRequest();
+                xhr.open('POST', 'delete-artist.php');
+                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                xhr.onload = function(){
+                    if(xhr.status === 200) {
+                        const oeuvreCard = nextDeleteLink.closest('.card-art-now-expo');
+                        oeuvreCard.parentNode.removeChild(oeuvreCard);
+                    } else {
+                        console.error('Erreur lors de la suppression du artiste');
+                    }
+                };
+ 
+                xhr.send('Id_Artiste=' + artisteId);
+ 
+               
+            })  
+ 
+ 
+        })
+</script>
+ 
+ 

@@ -295,7 +295,10 @@
   .nav-link{
   display: none;
   }
-
+  .expo-infos{
+    width: 70%;
+    margin-left: 0px;
+  }
 
 
 }

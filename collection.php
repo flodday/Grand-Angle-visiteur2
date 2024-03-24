@@ -20,10 +20,10 @@ if (isset($_GET['lang'])) {
   // Fetch object details based on ID
   $sql = "SELECT *
           FROM oeuvres
-          JOIN image ON oeuvres.Id_oeuvre = image.Id_oeuvre
+          JOIN image ON oeuvres.Id_Oeuvres = image.Id_Oeuvres
           JOIN artiste ON artiste.Id_Artiste = oeuvres.Id_Artiste
           JOIN exposition ON oeuvres.Id_Exposition = exposition.Id_Exposition
-          JOIN contenu ON contenu.Id_oeuvre = oeuvres.Id_oeuvre
+          JOIN contenu ON contenu.Id_Oeuvres = oeuvres.Id_Oeuvres
           JOIN langue ON contenu.Id_Langue = langue.Id_Langue 
           JOIN type_oeuvre ON oeuvres.Id_Type = type_oeuvre.Id_Type
           WHERE langue.Id_Langue = $id_L";
@@ -34,10 +34,10 @@ if (isset($_GET['lang'])) {
   $id_L = 1;
   $sql1 = "SELECT *
   FROM oeuvres
-  JOIN image ON oeuvres.Id_oeuvre = image.Id_oeuvre
+  JOIN image ON oeuvres.Id_Oeuvres = image.Id_Oeuvres
   JOIN artiste ON artiste.Id_Artiste = oeuvres.Id_Artiste
   JOIN exposition ON oeuvres.Id_Exposition = exposition.Id_Exposition
-  JOIN contenu ON contenu.Id_oeuvre = oeuvres.Id_oeuvre
+  JOIN contenu ON contenu.Id_Oeuvres = oeuvres.Id_Oeuvres
   JOIN langue ON contenu.Id_Langue = langue.Id_Langue
   JOIN type_oeuvre ON oeuvres.Id_Type = type_oeuvre.Id_Type
   WHERE langue.Id_Langue = $id_L";
@@ -101,7 +101,7 @@ if (isset($_GET['lang'])) {
           <h4 class="libelle-expo"><?= $Collec["libelle_contenu"]; ?></h4>
           <div class="keep-expo-btn">
             <button class="voir-plus-expo">
-              <a href="descriptionOeuvre.php?id=<?= $Collec["Id_oeuvre"]; ?>"><?php echo AFFICHE; ?></a>
+              <a href="descriptionOeuvre.php?id=<?= $Collec["Id_Oeuvres"]; ?>"><?php echo AFFICHE; ?></a>
             </button>
           </div>
         </div>

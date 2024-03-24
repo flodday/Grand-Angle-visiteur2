@@ -7,7 +7,7 @@ include_once "includes/pages/nav.php";
 
 $sqlArtNow = "SELECT *
 FROM oeuvres
-JOIN image ON oeuvres.Id_oeuvre = image.Id_oeuvre
+JOIN image ON oeuvres.Id_Oeuvres = image.Id_Oeuvres
 JOIN artiste ON artiste.Id_Artiste = oeuvres.Id_Artiste
 JOIN exposition ON oeuvres.Id_Exposition = exposition.Id_Exposition
 WHERE exposition.Date_Debut <= DATE_ADD(CURRENT_DATE(), INTERVAL 3 DAY) AND CURRENT_DATE() <= exposition.Date_Fin";

@@ -23,13 +23,13 @@ if (isset($_GET['id']) && isset($_GET['lang'])) {
     // Fetch object details based on ID
     $sql = "SELECT *
             FROM oeuvres
-            JOIN image ON oeuvres.Id_oeuvre = image.Id_oeuvre
+            JOIN image ON oeuvres.Id_Oeuvres = image.Id_Oeuvres
             JOIN artiste ON artiste.Id_Artiste = oeuvres.Id_Artiste
             JOIN exposition ON oeuvres.Id_Exposition = exposition.Id_Exposition
-            JOIN contenu ON contenu.Id_oeuvre = oeuvres.Id_oeuvre
+            JOIN contenu ON contenu.Id_Oeuvres = oeuvres.Id_Oeuvres
             JOIN langue ON contenu.Id_Langue = langue.Id_Langue
             
-            WHERE oeuvres.Id_oeuvre = $id AND langue.Id_Langue = $id_L";
+            WHERE oeuvres.Id_Oeuvres = $id AND langue.Id_Langue = $id_L";
     $request = $db->query($sql);
     $arts = $request->fetchAll(PDO::FETCH_ASSOC);
 } elseif (isset($_GET['id']) && !isset($_GET['lang'])) {
@@ -37,12 +37,12 @@ if (isset($_GET['id']) && isset($_GET['lang'])) {
     $id_L = 1;
     $sql1 = "SELECT *
     FROM oeuvres
-    JOIN image ON oeuvres.Id_oeuvre = image.Id_oeuvre
+    JOIN image ON oeuvres.Id_Oeuvres = image.Id_Oeuvres
     JOIN artiste ON artiste.Id_Artiste = oeuvres.Id_Artiste
     JOIN exposition ON oeuvres.Id_Exposition = exposition.Id_Exposition
-    JOIN contenu ON contenu.Id_oeuvre = oeuvres.Id_oeuvre
+    JOIN contenu ON contenu.Id_Oeuvres = oeuvres.Id_Oeuvres
     JOIN langue ON contenu.Id_Langue = langue.Id_Langue
-    WHERE oeuvres.Id_oeuvre = $id AND langue.Id_Langue = $id_L";
+    WHERE oeuvres.Id_Oeuvres = $id AND langue.Id_Langue = $id_L";
     $request1 = $db->query($sql1);
     $arts = $request1->fetchAll(PDO::FETCH_ASSOC);
 }

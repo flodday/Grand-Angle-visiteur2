@@ -88,7 +88,7 @@ if (isset($_GET['id'])) {
     $currentDateTime = date("Y-m-d H:i:s"); // Current date and time
     $sql2 = "SELECT *
     FROM oeuvres
-    JOIN image ON oeuvres.Id_oeuvre = image.Id_oeuvre
+    JOIN image ON oeuvres.Id_Oeuvres = image.Id_Oeuvres
     JOIN artiste ON artiste.Id_Artiste = oeuvres.Id_Artiste
     JOIN exposition ON oeuvres.Id_Exposition = exposition.Id_Exposition
     WHERE  oeuvres.Id_Exposition = $id2 AND (exposition.Date_Fin <= '$currentDateTime' OR 'exposition.Date_Debut' >= '$currentDateTime')";
@@ -107,7 +107,7 @@ if (isset($_GET['id'])) {
                             <div class="img"><img src="assets/images/artwork/<?= $cardOeuvre['chemin_Image']; ?>" alt="<?= $cardOeuvre['chemin_Image']; ?>"></div>
                             <div class="btn-voir-plus">
                                 <button class="btn-afficher">
-                                    <a href="descriptionOeuvre.php?id=<?= $cardOeuvre["Id_oeuvre"]; ?>"><?php echo AFFICHE; ?></a>
+                                    <a href="descriptionOeuvre.php?id=<?= $cardOeuvre["Id_Oeuvres"]; ?>"><?php echo AFFICHE; ?></a>
                                 </button>
                             </div>
                         </li>
@@ -138,5 +138,8 @@ if (isset($_GET['id'])) {
 include_once "includes/pages/footer.php";
 
 ?>
+
+
+
 
 
